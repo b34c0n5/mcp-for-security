@@ -30,7 +30,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     else \
         echo "[+] npm is already included with Node.js"; \
     fi && \
-    npm install -g npm@latest
+    npm install -g npm@latest \ 
+    npm install -g @cyproxio/mcp-manager
 
 # Create a global virtualenv
 RUN python3 -m venv /opt/venv

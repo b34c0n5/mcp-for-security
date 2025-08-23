@@ -20,7 +20,7 @@ for dir in */ ; do
     fi
 done
 
-jq 'with_entries(.value += {dockerContainer: ""})' mcp-config.json > mcp-config.tmp && mv mcp-config.tmp mcp-config.json
+jq '{mcpServers: with_entries(.value += {dockerContainer: ""})}' mcp-config.json > mcp-config.tmp && mv mcp-config.tmp mcp-config.json
 
 echo "[*] All build scripts executed. Container will now remain running."
 
